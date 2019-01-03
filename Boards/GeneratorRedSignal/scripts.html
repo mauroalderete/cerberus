@@ -1,0 +1,30 @@
+<script>
+    TransformerVmax = 10;
+    TransformerFreq = 60;
+    Vp = Math.sqrt(2)*TransformerVmax;
+    Vpout = Vp-1.4;
+    Ipeak = 5;
+    Inom = 1;
+    Cap = Ipeak * Inom / TransformerFreq*2 *(Vpout);
+    document.write("Cap="+Cap+"mf<br>");
+    document.write("Cap="+Cap*1000+"uf<br>");
+    document.write("V="+Vpout+"<br>");
+    document.write("I="+Ipeak*Inom+"<br>");
+</script>
+<html>
+1200 + 470 hasta 16V<br>********<br>
+</html>
+
+<script>
+    TransformerVmax = 12;
+    TransformerFreq = 60;
+    Vp = Math.sqrt(2)*TransformerVmax;
+    Vpout = Vp-1.4;
+    Ipeak = 10;
+    Inom = 4;
+    Cap = Ipeak * Inom / TransformerFreq*2 *(Vpout);
+    document.write("Cap="+Cap+"mf<br>");
+    document.write("Cap="+Cap*1000+"uf<br>");
+    document.write("V="+Vpout+"<br>");
+    document.write("I="+Ipeak*Inom+"<br>");
+</script>
