@@ -63,3 +63,21 @@ Conector de Borde SYC:
 - Capacitores Electroliticos
     - 100uf 25V x 2
 - Resistencia 220ohm 1/8W
+
+## Enable Device Source
+***Requiere experimentar con diferentes valores de resistencias***
+
+- Bornera 2 x 1
+- Tira de pines [5]
+- 4N25
+- IRF520N
+- Resistencias:
+    - 1M 1/8 5% SMD 0805
+    - 330 1/8 5% SMD 0805
+    - 1K5 1/8 5% **SMD 0805** / 1K 1/4 5%
+
+## Motherboard
+
+- Bornera 2 x20
+- Conector de Borde x5      ***AFECTA EL DISEÑO***
+- Resistencia 1M 5% 1/8W SMD 0805
