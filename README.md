@@ -10,17 +10,6 @@ La fuente de alimentacion por red de distribucipon electrica se divide en 3 etap
 
 # Componentes
 
-Conector de Borde SYC:
-- 2x18
-- 2x25
-- 2x31
-
-*Caracteristicas*
-- Cuerpo PBT + fibra de vidrio (UL-94V-O)
-- Contacto bronce fosforoso - oro selectivo
-- Corriente 3A
-- Resistencia de contacto 30mOHM
-
 ## Red
 
 - Enchufe 220V
@@ -63,12 +52,14 @@ Conector de Borde SYC:
 - Capacitores Electroliticos
     - 100uf 25V x 2
 - Resistencia 220ohm 1/8W
+- LM7805
+- Diodo LED Rojo
 
 ## Enable Device Source
 ***Requiere experimentar con diferentes valores de resistencias***
 
 - Bornera 2 x 1
-- Tira de pines [5]
+- Tira de pines [4]
 - 4N25
 - IRF520N
 - Resistencias:
@@ -81,3 +72,31 @@ Conector de Borde SYC:
 - Bornera 2 x20
 - Conector de Borde x5      ***AFECTA EL DISEÑO***
 - Resistencia 1M 5% 1/8W SMD 0805
+
+## Data Device Control
+
+- BC548
+- Resistencias:
+    - 1k8 1/4
+    - Tira de pines [4] x6
+    - Conector [a DataDeviceHandler] [11]
+
+## Device Data Handler PIR01
+
+- Conector [a Data Device Control] [11]
+- 4n35 DIP
+- Diodos
+    1n4148
+- Resistencias
+    - 1M 1/8W 5% SMD 0805
+    - 560ohm 1/2W
+
+## Device Data Handler INDOORSIREN01
+
+- Conector [a Data Device Control] [11]
+- 4n35 DIP
+- Resistencias
+    - 330 1/8W
+    - 220 1/8W
+    - 1M 1/8W 5% SMD 0805
+- Mosfet IRF520N
