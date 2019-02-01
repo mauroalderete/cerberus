@@ -1,0 +1,94 @@
+{
+    "sensors": {
+        "0": {
+            "name": "01",
+            "type": "Movimiento",
+            "available": true,
+            "enable": true,
+            "actived": true
+        },
+        "1": {
+            "name": "02",
+            "type": "Movimiento",
+            "available": true,
+            "enable": true,
+            "actived": true
+        },
+        "2": {
+            "name": "03",
+            "type": "Movimiento",
+            "available": true,
+            "enable": true,
+            "actived": true
+        },
+        "3": {
+            "name": "04",
+            "type": "Movimiento",
+            "available": true,
+            "enable": true,
+            "actived": true
+        },
+        "4": {
+            "name": "05",
+            "type": "Movimiento",
+            "available": true,
+            "enable": true,
+            "actived": true
+        },
+        "5": {
+            "name": "06",
+            "type": "Movimiento",
+            "available": true,
+            "enable": true,
+            "actived": true
+        },
+        "6": {
+            "name": "07",
+            "type": "Movimiento",
+            "available": true,
+            "enable": true,
+            "actived": true
+        },
+        "7": {
+            "name": "08",
+            "type": "Movimiento",
+            "available": true,
+            "enable": true,
+            "actived": true
+        }
+    },
+    "actuators": {
+        "0":{
+            "name": "Sirena1",
+            "type": "SirenaExterior",
+            "available": true,
+            "enable": false
+        },
+        "1":{
+            "name": "Sirena2",
+            "type": "SirenaInterior",
+            "available": true,
+            "enable": false
+        },
+        "2":{
+            "name": "Flash",
+            "type": "LuzFlash",
+            "available": true,
+            "enable": false
+        }
+    },
+    "power": {
+        "available": false,
+        "connected": false
+    },
+    "events": {
+        "0": {
+            "date": "",
+            "time": "",
+            "type": ""
+        }
+    },
+    "system": {
+        "connected": false
+    }
+}

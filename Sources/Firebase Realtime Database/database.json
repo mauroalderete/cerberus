@@ -1,0 +1,86 @@
+{
+    "sensors": {
+        "0": {
+            "name": "01",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "TURN_ON"
+        },
+        "1": {
+            "name": "02",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "TURN_ON"
+        },
+        "2": {
+            "name": "03",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "TURN_ON"
+        },
+        "3": {
+            "name": "04",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "TURN_ON"
+        },
+        "4": {
+            "name": "05",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "TURN_ON"
+        },
+        "5": {
+            "name": "06",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "TURN_ON"
+        },
+        "6": {
+            "name": "07",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "TURN_ON"
+        },
+        "7": {
+            "name": "08",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "TURN_ON"
+        }
+    },
+    "actuators": {
+        "0":{
+            "name": "Sirena1",
+            "type": "SirenaExterior",
+            "status": "OFF",
+            "preferredStatus": "TURN_OFF"
+        },
+        "1":{
+            "name": "Sirena2",
+            "type": "SirenaInterior",
+            "status": "OFF",
+            "preferredStatus": "TURN_OFF"
+        },
+        "2":{
+            "name": "Flash",
+            "type": "LuzFlash",
+            "status": "OFF",
+            "preferredStatus": "TURN_OFF"
+        }
+    },
+    "power": {
+        "status": "AVAILABLE_CONNECTED",
+        "preferredStatus": "CONNECTED"
+    },
+    "system": {
+        "success": false,
+        "error": "",
+        "ping": 0,
+        "pong": 0,
+        "lifeSignal": 0,
+        "reconnections": 0,
+        "restart": 0,
+        "newReset": 0
+    }
+}

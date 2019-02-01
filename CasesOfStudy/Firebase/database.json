@@ -1,0 +1,147 @@
+{
+    "sensors": {
+        "0": {
+            "name": "01",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "ON",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "ox": 0.0,
+            "oy": 0.0,
+            "oz": 0.0
+        },
+        "1": {
+            "name": "02",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "ON",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "ox": 0.0,
+            "oy": 0.0,
+            "oz": 0.0
+        },
+        "2": {
+            "name": "03",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "ON",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "ox": 0.0,
+            "oy": 0.0,
+            "oz": 0.0
+        },
+        "3": {
+            "name": "04",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "ON",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "ox": 0.0,
+            "oy": 0.0,
+            "oz": 0.0
+        },
+        "4": {
+            "name": "05",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "ON",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "ox": 0.0,
+            "oy": 0.0,
+            "oz": 0.0
+        },
+        "5": {
+            "name": "06",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "ON",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "ox": 0.0,
+            "oy": 0.0,
+            "oz": 0.0
+        },
+        "6": {
+            "name": "07",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "ON",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "ox": 0.0,
+            "oy": 0.0,
+            "oz": 0.0
+        },
+        "7": {
+            "name": "08",
+            "type": "Movimiento",
+            "status": "OFF",
+            "preferredStatus": "ON",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "ox": 0.0,
+            "oy": 0.0,
+            "oz": 0.0
+        }
+    },
+    "actuators": {
+        "0":{
+            "name": "Sirena1",
+            "type": "SirenaExterior",
+            "status": "OFF",
+            "preferredStatus": "OFF",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "1":{
+            "name": "Sirena2",
+            "type": "SirenaInterior",
+            "status": "OFF",
+            "preferredStatus": "OFF",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "2":{
+            "name": "Flash",
+            "type": "LuzFlash",
+            "status": "OFF",
+            "preferredStatus": "OFF",
+            "arduinoPin": 12,
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        }
+    },
+    "power": {
+        "status": "",
+        "preferredStatus": "OFF"
+    },
+    "system": {
+        "connected": false
+    }
+}
