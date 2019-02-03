@@ -7,11 +7,6 @@
 #define TURN_ON String("TURN_ON")
 #define TURN_OFF String("TURN_OFF")
 
-#define EEPROM_RESTART 1
-#define EEPROM_WIFI 2
-#define EEPROM_UART 3
-#define EEPROM_FIREBASE 4
-
 class Messenger{
   private:
     HardwareSerial *_port;
@@ -145,111 +140,7 @@ class Messenger{
       return send("RD="+String( quantity )+";");
     }
 };
-/*
-class EventRecorder{
-  private:
-    bool _restartDetected;
-    bool _lostWifiConnectionDetected;
-    bool _lostUARTConnectionDetected;
-    bool _lostFirebaseConnectionDetected;
-    Messenger *_messenger;
-    
-  public:
-    EventRecorder(){
-      _restartDetected=false;
-      _lostWifiConnectionDetected=false;
-      _lostUARTConnectionDetected=false;
-      _lostFirebaseConnectionDetected=false;
-    }
 
-    void setMessenger(Messenger *messenger){
-      _messenger = messenger;
-    }
-
-    void newRestart(){
-      if ( !_restartDetected ){
-        _restartDetected = true;
-        char b = EEPROM.read(EEPROM_RESTART);
-        if (EEPROM.read(EEPROM_RESTART)<255){
-          b++;
-        }
-        EEPROM.write(EEPROM_RESTART,b);
-      }
-    }
-    
-    void lostWifiConnection(){
-      _lostWifiConnectionDetected=true;
-      char b = EEPROM.read(EEPROM_WIFI);
-      if (EEPROM.read(EEPROM_WIFI)<255){
-        b++;
-      }
-      EEPROM.write(EEPROM_WIFI,b);
-    }
-    
-    void lostUARTConnection(){
-      if ( !_lostUARTConnectionDetected ){
-        _lostUARTConnectionDetected=true;
-        char b = EEPROM.read(EEPROM_UART);
-        if (EEPROM.read(EEPROM_UART)<255){
-          b++;
-        }
-        EEPROM.write(EEPROM_UART,b);
-      }
-    }
-    
-    void lostFirebaseConnection(){
-      _lostFirebaseConnectionDetected=true;
-      char b = EEPROM.read(EEPROM_FIREBASE);
-      if (EEPROM.read(EEPROM_FIREBASE)<255){
-        b++;
-      }
-      EEPROM.write(EEPROM_FIREBASE,b);
-    }
-
-    void clearRestart(){
-      _restartDetected=false;
-      EEPROM.write(EEPROM_RESTART,0);
-    }
-
-    void clearWifiReconnection(){
-      _lostWifiConnectionDetected=false;
-      EEPROM.write(EEPROM_WIFI,0);
-    }
-
-    void clearUARTReconnection(){
-      _lostUARTConnectionDetected=false;
-      EEPROM.write(EEPROM_UART,0);
-    }
-
-    void clearFirebaseReconnection(){
-      _lostFirebaseConnectionDetected=false;
-      EEPROM.write(EEPROM_FIREBASE,0);
-    }
-
-    void clearAll(){
-      clearRestart();
-      clearWifiReconnection();
-      clearUARTReconnection();
-      clearFirebaseReconnection();
-    }
-
-    void Loop(){
-      if ( _restartDetected ){
-        //notifico que hay un nuevo reinicio
-        if ( _messenger->sendRestartDetected(EEPROM.read(EEPROM_RESTART)) ){
-          _restartDetected = false;
-        }else{
-          //no se pudo notificar aún... se intentara la proxima vez
-          //debo añadir que se ha perdido la comunicacion, en caso de que
-          //UART no este disponible
-          if ( _messenger->errorCode() == MSN_ERROR_UNAVAILABLE ){
-            lostUARTConnection();
-          }
-        }
-      }
-    }
-};
-*/
 class Sensor{
   private:
     int _input;           //pin en arduino de la señal del sensor
@@ -259,7 +150,7 @@ class Sensor{
     bool _signalChanged;  //indica cuando hubo un cambio en la señal recibida
     String _status;       //estado del sensor, debe coincidir con BD
     Messenger *_messenger;
-//    EventRecorder *_eventRecorder;
+
     unsigned int _id;
     bool _changeNotificated;
  
@@ -282,11 +173,7 @@ class Sensor{
     void setMessenger(Messenger *msn){
       _messenger = msn;
     }
-/*
-    void setEventRecorder(EventRecorder *eventRecorder){
-      _eventRecorder = eventRecorder;
-    }
-*/
+
     bool changed(){
       return _signalChanged;
     }
@@ -347,7 +234,7 @@ class Actuator{
     int _enable;
     String _status;
     Messenger *_messenger;
-//    EventRecorder *_eventRecorder;
+
     unsigned int _id;
   
   public:
@@ -365,11 +252,7 @@ class Actuator{
     void setMessenger(Messenger *msn){
       _messenger = msn;
     }
-/*
-    void setEventRecorder(EventRecorder *eventRecorder){
-      _eventRecorder = eventRecorder;
-    }
-*/
+
     void updateStatus(String newStatus){
       if ( _status == newStatus ){
         if ( !_messenger->sendActuatorStatus(_id,"INDF") ){
@@ -396,7 +279,6 @@ class Actuator{
 Sensor *Sensors[8];
 Actuator *Actuators[3];
 Messenger messenger;
-//EventRecorder eventRecorder;
 
 void setup() {
   int s=0;
@@ -431,18 +313,11 @@ void setup() {
   
   for (s=0;s<SENSORS;s++){
     Sensors[s]->setMessenger(&messenger);
-//    Sensors[s]->setEventRecorder(&eventRecorder);
   }
   for (a=0;a<ACTUATORS;a++){
     Actuators[a]->setMessenger(&messenger);
- //   Actuators[s]->setEventRecorder(&eventRecorder);
   }
-/*
-  eventRecorder.setMessenger(&messenger);
-  eventRecorder.newRestart();
 
-  eventRecorder.Loop();
-  */
 }
 
 void loop() {
@@ -461,6 +336,4 @@ void loop() {
       Actuators[a]->updateStatus(ON_ACTIVATED);
     }
   }
-
-//  eventRecorder.Loop();
 }
