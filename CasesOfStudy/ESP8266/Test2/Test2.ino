@@ -11,8 +11,8 @@ bool ledStatus=true;
 
 void setup() {
   pinMode(2, OUTPUT);
-  Serial.begin(115200);
-  Serial.setDebugOutput(true);
+  Serial.begin(74880);
+  //Serial.setDebugOutput(true);
   Serial.println("Conecting");
 
   WiFi.begin(ssid, password);

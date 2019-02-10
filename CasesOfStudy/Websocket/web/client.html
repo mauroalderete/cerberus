@@ -4,7 +4,7 @@
     <meta charset="utf-8" >
     <title>Prueba WebSocket</title>
     <script language="javascript" type="text/javascript">
-      var wsUri = "ws://localhost:6363";
+      var wsUri = "ws://192.168.0.22:81";
       var output;
 
       function init(){
@@ -36,7 +36,7 @@
 
       function onMessage(evt){
           writeToScreen('<span style="color: blue;">RESPUESTA: ' + evt.data + '</span>');
-          websocket.close();
+          //websocket.close();
       }
 
       function onError(evt){
