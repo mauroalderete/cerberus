@@ -69,7 +69,7 @@ void loop() {
       Actuators[a]->updateStatus(ON_ACTIVATED);
     }
   }
-
+/*
   if ( errorManager.errorsAvailable() ){
     if ( !errorManager.getNotified() ){
       if ( messenger.sendNotifiedErrorAvailable() ){
@@ -78,5 +78,6 @@ void loop() {
       }
     }
   }
+*/
   
 }

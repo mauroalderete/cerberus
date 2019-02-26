@@ -268,6 +268,44 @@ void loop () {
       }
     }break;
   }
+
+  String comand;
+  bool newComand = false;
+  while( Serial.available ){
+    //estoy recibiendo un comando extra
+    char c = Serial.read();
+    if ( c=='\n' || c=='\r' ){
+    }else{
+      if ( c==';' ){
+        newComand=true;
+      }else{
+        comand+=c;
+      }
+    }
+
+    if ( newComand ){
+
+      //decodifico el comando
+      if ( newComand.indexOf("A=")>=0 ){
+        debug.println("Actuator update");
+        int coma = newComand.indexOf(",");
+        if ( coma>=0 ){
+          String id = newComand.substring(2,coma);
+          String value = newComand.substring(coma);
+          debug.println("  id: "+id);
+          debug.println("  value: "+value);
+          streamEvents[0].firebase.set("/status/actuators/"+id,value);
+        }else{
+          debug.println("  Error no coma");
+        }
+      }
+
+      //preparo para el siguiente comando
+      newComand = false;
+      comand = "";
+    }
+  }
+  
 /*
   if ( errorManager.errorsAvailable() ){
 
